@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/teejarr/Code/games/Game
+CMAKE_SOURCE_DIR = /home/teejarr/Code/games/AdventureRPG
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/teejarr/Code/games/Game/out/Debug
+CMAKE_BINARY_DIR = /home/teejarr/Code/games/AdventureRPG/out/Debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,16 +87,16 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/teejarr/Code/games/Game/out/Debug/CMakeFiles /home/teejarr/Code/games/Game/out/Debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teejarr/Code/games/AdventureRPG/out/Debug/CMakeFiles /home/teejarr/Code/games/AdventureRPG/out/Debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/teejarr/Code/games/Game/out/Debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teejarr/Code/games/AdventureRPG/out/Debug/CMakeFiles 0
 .PHONY : all
 
 # The main codegen target
 codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/teejarr/Code/games/Game/out/Debug/CMakeFiles /home/teejarr/Code/games/Game/out/Debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teejarr/Code/games/AdventureRPG/out/Debug/CMakeFiles /home/teejarr/Code/games/AdventureRPG/out/Debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/teejarr/Code/games/Game/out/Debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teejarr/Code/games/AdventureRPG/out/Debug/CMakeFiles 0
 .PHONY : codegen
 
 # The main clean target
@@ -160,29 +160,53 @@ src/Engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Engine.cpp.s
 .PHONY : src/Engine.cpp.s
 
-src/Entity/Entity.o: src/Entity/Entity.cpp.o
-.PHONY : src/Entity/Entity.o
+src/Entity/Components/Collectable.o: src/Entity/Components/Collectable.cpp.o
+.PHONY : src/Entity/Components/Collectable.o
 
 # target to build an object file
-src/Entity/Entity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Entity.cpp.o
-.PHONY : src/Entity/Entity.cpp.o
+src/Entity/Components/Collectable.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Components/Collectable.cpp.o
+.PHONY : src/Entity/Components/Collectable.cpp.o
 
-src/Entity/Entity.i: src/Entity/Entity.cpp.i
-.PHONY : src/Entity/Entity.i
+src/Entity/Components/Collectable.i: src/Entity/Components/Collectable.cpp.i
+.PHONY : src/Entity/Components/Collectable.i
 
 # target to preprocess a source file
-src/Entity/Entity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Entity.cpp.i
-.PHONY : src/Entity/Entity.cpp.i
+src/Entity/Components/Collectable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Components/Collectable.cpp.i
+.PHONY : src/Entity/Components/Collectable.cpp.i
 
-src/Entity/Entity.s: src/Entity/Entity.cpp.s
-.PHONY : src/Entity/Entity.s
+src/Entity/Components/Collectable.s: src/Entity/Components/Collectable.cpp.s
+.PHONY : src/Entity/Components/Collectable.s
 
 # target to generate assembly for a file
-src/Entity/Entity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Entity.cpp.s
-.PHONY : src/Entity/Entity.cpp.s
+src/Entity/Components/Collectable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Components/Collectable.cpp.s
+.PHONY : src/Entity/Components/Collectable.cpp.s
+
+src/Entity/Components/Entity.o: src/Entity/Components/Entity.cpp.o
+.PHONY : src/Entity/Components/Entity.o
+
+# target to build an object file
+src/Entity/Components/Entity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Components/Entity.cpp.o
+.PHONY : src/Entity/Components/Entity.cpp.o
+
+src/Entity/Components/Entity.i: src/Entity/Components/Entity.cpp.i
+.PHONY : src/Entity/Components/Entity.i
+
+# target to preprocess a source file
+src/Entity/Components/Entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Components/Entity.cpp.i
+.PHONY : src/Entity/Components/Entity.cpp.i
+
+src/Entity/Components/Entity.s: src/Entity/Components/Entity.cpp.s
+.PHONY : src/Entity/Components/Entity.s
+
+# target to generate assembly for a file
+src/Entity/Components/Entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Components/Entity.cpp.s
+.PHONY : src/Entity/Components/Entity.cpp.s
 
 src/Entity/Player.o: src/Entity/Player.cpp.o
 .PHONY : src/Entity/Player.o
@@ -245,9 +269,12 @@ help:
 	@echo "... src/Engine.o"
 	@echo "... src/Engine.i"
 	@echo "... src/Engine.s"
-	@echo "... src/Entity/Entity.o"
-	@echo "... src/Entity/Entity.i"
-	@echo "... src/Entity/Entity.s"
+	@echo "... src/Entity/Components/Collectable.o"
+	@echo "... src/Entity/Components/Collectable.i"
+	@echo "... src/Entity/Components/Collectable.s"
+	@echo "... src/Entity/Components/Entity.o"
+	@echo "... src/Entity/Components/Entity.i"
+	@echo "... src/Entity/Components/Entity.s"
 	@echo "... src/Entity/Player.o"
 	@echo "... src/Entity/Player.i"
 	@echo "... src/Entity/Player.s"

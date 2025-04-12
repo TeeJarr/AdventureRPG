@@ -1,26 +1,32 @@
 [
 {
-  "directory": "/home/teejarr/Code/games/Game/out/Debug",
-  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/Game/src -I/home/teejarr/Code/games/Game/include -I/home/teejarr/Code/games/Game/include/Entity -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Engine.cpp.o -c /home/teejarr/Code/games/Game/src/Engine.cpp",
-  "file": "/home/teejarr/Code/games/Game/src/Engine.cpp",
+  "directory": "/home/teejarr/Code/games/AdventureRPG/out/Debug",
+  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Engine.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Engine.cpp",
+  "file": "/home/teejarr/Code/games/AdventureRPG/src/Engine.cpp",
   "output": "CMakeFiles/Game.dir/src/Engine.cpp.o"
 },
 {
-  "directory": "/home/teejarr/Code/games/Game/out/Debug",
-  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/Game/src -I/home/teejarr/Code/games/Game/include -I/home/teejarr/Code/games/Game/include/Entity -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Entity/Entity.cpp.o -c /home/teejarr/Code/games/Game/src/Entity/Entity.cpp",
-  "file": "/home/teejarr/Code/games/Game/src/Entity/Entity.cpp",
-  "output": "CMakeFiles/Game.dir/src/Entity/Entity.cpp.o"
+  "directory": "/home/teejarr/Code/games/AdventureRPG/out/Debug",
+  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Entity/Components/Collectable.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Entity/Components/Collectable.cpp",
+  "file": "/home/teejarr/Code/games/AdventureRPG/src/Entity/Components/Collectable.cpp",
+  "output": "CMakeFiles/Game.dir/src/Entity/Components/Collectable.cpp.o"
 },
 {
-  "directory": "/home/teejarr/Code/games/Game/out/Debug",
-  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/Game/src -I/home/teejarr/Code/games/Game/include -I/home/teejarr/Code/games/Game/include/Entity -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Entity/Player.cpp.o -c /home/teejarr/Code/games/Game/src/Entity/Player.cpp",
-  "file": "/home/teejarr/Code/games/Game/src/Entity/Player.cpp",
+  "directory": "/home/teejarr/Code/games/AdventureRPG/out/Debug",
+  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Entity/Components/Entity.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Entity/Components/Entity.cpp",
+  "file": "/home/teejarr/Code/games/AdventureRPG/src/Entity/Components/Entity.cpp",
+  "output": "CMakeFiles/Game.dir/src/Entity/Components/Entity.cpp.o"
+},
+{
+  "directory": "/home/teejarr/Code/games/AdventureRPG/out/Debug",
+  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Entity/Player.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Entity/Player.cpp",
+  "file": "/home/teejarr/Code/games/AdventureRPG/src/Entity/Player.cpp",
   "output": "CMakeFiles/Game.dir/src/Entity/Player.cpp.o"
 },
 {
-  "directory": "/home/teejarr/Code/games/Game/out/Debug",
-  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/Game/src -I/home/teejarr/Code/games/Game/include -I/home/teejarr/Code/games/Game/include/Entity -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Main.cpp.o -c /home/teejarr/Code/games/Game/src/Main.cpp",
-  "file": "/home/teejarr/Code/games/Game/src/Main.cpp",
+  "directory": "/home/teejarr/Code/games/AdventureRPG/out/Debug",
+  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Main.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Main.cpp",
+  "file": "/home/teejarr/Code/games/AdventureRPG/src/Main.cpp",
   "output": "CMakeFiles/Game.dir/src/Main.cpp.o"
 }
 ]

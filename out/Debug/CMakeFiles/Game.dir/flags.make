@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/teejarr/Code/games/Game/src -I/home/teejarr/Code/games/Game/include -I/home/teejarr/Code/games/Game/include/Entity
+CXX_INCLUDES = -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity
 
 CXX_FLAGS = -g -std=gnu++20
 
