@@ -1,66 +1,95 @@
 #include "Engine.hpp"
-#include "Window.hpp"
-#include <iostream>
-#include <raylib.h>
+#include "Collectable.hpp"
+#include "Config.hpp"
+#include "raylib.h"
+#include <string>
 
 Engine::Engine() {
-  InitWindow(Window::SCREEN_SIZE.x, Window::SCREEN_SIZE.y, "Window");
-  SetTargetFPS(Window::FPS);
+  InitWindow(Window::SCREEN_SIZE.x, Window::SCREEN_SIZE.y, "Game");
+  SetTargetFPS(144);
   InitCamera();
-
-  Loop();
-}
-
-void Engine::Loop() {
+  map.LoadMap();
+  Collectable* coin = new Collectable(
+      {(float)GetRandomValue(0, map.MapWidth), (float)GetRandomValue(0, map.MapHeight)});
+  coin_arr.push_back(coin);
+  player.Spawn(map);
   while (!WindowShouldClose()) {
     Update();
     Draw();
   }
+
+  CleanUp();
 }
+
+void Engine::CleanUp() { CloseWindow(); }
 
 void Engine::Draw() {
   BeginDrawing();
   ClearBackground(BLACK);
-  // entity section
-  BeginMode2D(camera);
-  player.Draw();
-  EndMode2D();
-  // ui section
-  DrawUI();
+  CameraActors(); // draw all elements that are affected by the camera
+  DrawUI();       // draw all of the static UI elements on the screen
   EndDrawing();
 }
 
-void Engine::Update() {
-  std::cout << player.GetPos().x << " " << player.GetPos().y << std::endl;
-  // update entities
-  player.Move();
-  Camera();
-  // update ui
-}
-
-void Engine::Camera() {
-  // camera follows the player
-  camera.target = {player.GetPos().x + 20, player.GetPos().y + 20};
+void Engine::CameraActors() {
+  BeginMode2D(camera);
+  // TODO: Draw the map to the screen
+  map.DrawMap();
+  for (Collectable* coin : coin_arr) {
+    coin->Draw();
+  }
+  player.Draw();
+  // TODO: Draw other Entities to the screen
+  EndMode2D();
 }
 
 void Engine::DrawUI() {
-  if (CONFIG::DEBUG) {
-    DrawFPS(Window::SCREEN_SIZE.x * 0.01, Window::SCREEN_SIZE.y * 0.01);
+  if (Debug::DEBUG_PERFORMANCE) {
+    DrawFPS(Window::SCREEN_SIZE.x * 0.01f, Window::SCREEN_SIZE.y * 0.01f);
+    DrawText(std::to_string(GetFrameTime()).c_str(), Window::SCREEN_SIZE.x * 0.01f,
+             Window::SCREEN_SIZE.y * 0.03f, 20, GREEN);
+    DrawText((std::to_string(player.GetGold()) + " Gold").c_str(), Window::SCREEN_SIZE.x * 0.01f,
+             Window::SCREEN_SIZE.y * 0.97f, 20, WHITE);
   }
-  // Draw HP Bar
-  // Draw Mana Bar
-  // Draw Active Items
-  // Draw Current Money
+}
+
+void Engine::Update() {
+  player.Update(map);
+  camera.target = {player.bounds.x + 20, player.bounds.y + 20};
+  HandleCollectables();
 }
 
 void Engine::InitCamera() {
-  // initializes camera on the center of the screen with default zoom and rotation
-  camera.target   = {0, 0}; // make centered on the player character once that is implimented
-  camera.offset   = {GetScreenWidth() / 2.0f, GetScreenHeight() / 2.0f};
-  camera.zoom     = 1.0f;
+  camera.offset   = {Window::SCREEN_SIZE.x / 2.0f, Window::SCREEN_SIZE.y / 2.0f};
+  camera.target   = {player.bounds.x + 20, player.bounds.y + 20};
   camera.rotation = 0.0f;
+  camera.zoom     = 1;
 }
 
-void Engine::CleanUp() {
-  CloseWindow();
+void Engine::HandleCollectables() {
+  int CoinsCollected = 0;
+  std::vector<int> CoinIndex;
+  std::vector<Collectable*> deleteQueue;
+  int index = 0;
+  for (Collectable* coin : coin_arr) {
+    if (coin->Collect(&player)) {
+      CoinIndex.push_back(index);
+      deleteQueue.push_back(coin);
+      CoinsCollected++;
+    }
+    index++;
+  }
+  for (int i : CoinIndex) {
+    coin_arr.erase(coin_arr.begin() + i);
+  }
+  for (Collectable* coin : deleteQueue) {
+    delete coin;
+  }
+  for (int i = 0; i < CoinsCollected; i++) {
+    float coinX       = (float)GetRandomValue(0, map.MapWidth);
+    float coinY       = (float)GetRandomValue(0, map.MapHeight);
+    Collectable* coin = new Collectable({coinX, coinY});
+    coin_arr.push_back(coin);
+    std::cout << coin->bounds.x << ", " << coin->bounds.y << std::endl;
+  }
 }

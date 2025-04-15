@@ -3,6 +3,5 @@
 
 int main() {
   Engine game;
-  game.CleanUp();
   return 0;
 }

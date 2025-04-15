@@ -9,10 +9,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/teejarr/Code/games/AdventureRPG/src/Engine.cpp" "CMakeFiles/Game.dir/src/Engine.cpp.o" "gcc" "CMakeFiles/Game.dir/src/Engine.cpp.o.d"
-  "/home/teejarr/Code/games/AdventureRPG/src/Entity/Components/Collectable.cpp" "CMakeFiles/Game.dir/src/Entity/Components/Collectable.cpp.o" "gcc" "CMakeFiles/Game.dir/src/Entity/Components/Collectable.cpp.o.d"
-  "/home/teejarr/Code/games/AdventureRPG/src/Entity/Components/Entity.cpp" "CMakeFiles/Game.dir/src/Entity/Components/Entity.cpp.o" "gcc" "CMakeFiles/Game.dir/src/Entity/Components/Entity.cpp.o.d"
+  "/home/teejarr/Code/games/AdventureRPG/src/Entity/Entity.cpp" "CMakeFiles/Game.dir/src/Entity/Entity.cpp.o" "gcc" "CMakeFiles/Game.dir/src/Entity/Entity.cpp.o.d"
   "/home/teejarr/Code/games/AdventureRPG/src/Entity/Player.cpp" "CMakeFiles/Game.dir/src/Entity/Player.cpp.o" "gcc" "CMakeFiles/Game.dir/src/Entity/Player.cpp.o.d"
   "/home/teejarr/Code/games/AdventureRPG/src/Main.cpp" "CMakeFiles/Game.dir/src/Main.cpp.o" "gcc" "CMakeFiles/Game.dir/src/Main.cpp.o.d"
+  "/home/teejarr/Code/games/AdventureRPG/src/Map/Tile.cpp" "CMakeFiles/Game.dir/src/Map/Tile.cpp.o" "gcc" "CMakeFiles/Game.dir/src/Map/Tile.cpp.o.d"
   "" "Game" "gcc" "CMakeFiles/Game.dir/link.d"
   )
 

@@ -1,10 +1,9 @@
 #pragma once
+#include "Map.hpp"
 #include "Player.hpp"
 #include <raylib.h>
-#include <sys/types.h>
 
-class Engine
-{
+class Engine {
   public:
   Engine();
   void Loop();
@@ -13,17 +12,13 @@ class Engine
   private:
   void Update();
   void Draw();
-  void Camera();
+  void CameraActors();
   void DrawUI();
-
   void InitCamera();
+  void HandleCollectables();
 
   private:
-  Camera2D camera = {0};
+  Camera2D camera;
   Player player;
+  Map map;
 };
-
-namespace CONFIG
-{
-  inline bool DEBUG = true;
-}

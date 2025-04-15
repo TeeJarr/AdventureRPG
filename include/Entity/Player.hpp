@@ -1,16 +1,35 @@
 #pragma once
-#include "Entity.hpp"
-#include <sys/types.h>
+#include "Map.hpp"
+#include <raylib.h>
 
-class Player : public Entity
-{
+class Player {
   public:
-  Player();
-  void Move();
+  void Spawn(Map& map);
+  void Update(Map& map);
+  void Draw() const;
+  void Move(Map& map);
+  void Attack(); // NOTE: Does not buffer attacks so you must time attacks properly
+  void TakeDamage(unsigned int a_DamageTaken);
+  void Heal(unsigned int a_HealAmount);
+  void AddGold(int Gold_Amount);
+  unsigned int GetGold() const;
+
+  public: // public member variable
+  Rectangle bounds;
+  Rectangle hit_box;
+  unsigned int PlayerDirection = UP;
 
   private: // private functions
-  bool CheckScreenBounds() const;
+  void CheckMapBounds(Rectangle MapBounds);
+  void DebugPlayer() const;
 
-  private: // member variables
-  u_int8_t m_speed = 5;
+  private: // player stats
+  unsigned int m_Health = 10;
+  unsigned int m_Gold   = 0;
+
+  private: // private member variables
+  bool isAttacking     = false;
+  unsigned int m_speed = 150;
+  float AttackTimeSecs = 0.5;
+  enum Direction { UP = 10, DOWN = 20, LEFT = 30, RIGHT = 40 };
 };

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/Game.dir/link.d CMakeFiles/Game.dir/src/Engine.cpp.o CMakeFiles/Game.dir/src/Entity/Components/Collectable.cpp.o CMakeFiles/Game.dir/src/Entity/Components/Entity.cpp.o CMakeFiles/Game.dir/src/Entity/Player.cpp.o CMakeFiles/Game.dir/src/Main.cpp.o -o Game  -lraylib

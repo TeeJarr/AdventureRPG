@@ -1,0 +1,3 @@
+/home/teejarr/Code/games/AdventureRPG/Debug/CMakeFiles/Game.dir
+/home/teejarr/Code/games/AdventureRPG/Debug/CMakeFiles/edit_cache.dir
+/home/teejarr/Code/games/AdventureRPG/Debug/CMakeFiles/rebuild_cache.dir
