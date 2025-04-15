@@ -2,6 +2,7 @@
 #include "Config.hpp"
 #include "Map.hpp"
 #include "raylib.h"
+#include <cstdlib>
 #include <iostream>
 
 void Player::Spawn(Map& map) {
@@ -16,7 +17,7 @@ void Player::Draw() const {
   isAttacking ? DrawRectangleRec(hit_box, WHITE) : DrawRectangleRec({}, BLACK);
 }
 
-void Player::Update(Map& map) {
+void Player::Update(Map* map) {
   Move(map);
   Attack();
 }
@@ -47,35 +48,41 @@ void Player::Attack() {
   }
 }
 
-void Player::Move(Map& map) {
-  if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_A)) {
-    bounds.x -= m_speed * GetFrameTime();
+void Player::Move(Map* map) {
+  float delta               = m_speed * GetFrameTime();
+  Rectangle original_bounds = bounds;
+
+  bool move_left  = (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT));
+  bool move_right = (IsKeyDown(KEY_RIGHT) && !IsKeyDown(KEY_LEFT));
+  bool move_up    = (IsKeyDown(KEY_UP) && !IsKeyDown(KEY_DOWN));
+  bool move_down  = (IsKeyDown(KEY_DOWN) && !IsKeyDown(KEY_UP));
+
+  if (move_left) {
+    bounds.x -= delta;
     PlayerDirection = LEFT;
-    if (Debug::DEBUG_PLAYER) {
-      DebugPlayer();
-    }
-  } else if (IsKeyDown(KEY_RIGHT) && !IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_D)) {
-    bounds.x += m_speed * GetFrameTime();
+  } else if (move_right) {
+    bounds.x += delta;
     PlayerDirection = RIGHT;
-    if (Debug::DEBUG_PLAYER) {
-      DebugPlayer();
-    }
   }
-  if (IsKeyDown(KEY_UP) && !IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_W)) {
-    bounds.y -= m_speed * GetFrameTime();
+
+  if (CheckEntityCollision(map)) {
+    bounds.x = original_bounds.x;
+  }
+  if (move_up) {
+    bounds.y -= delta;
     PlayerDirection = UP;
-    if (Debug::DEBUG_PLAYER) {
-      DebugPlayer();
-    }
-  } else if (IsKeyDown(KEY_DOWN) && !IsKeyDown(KEY_UP) || IsKeyDown(KEY_S)) {
-    bounds.y += m_speed * GetFrameTime();
+  } else if (move_down) {
+    bounds.y += delta;
     PlayerDirection = DOWN;
-    if (Debug::DEBUG_PLAYER) {
-      DebugPlayer();
-    }
   }
+
+  if (CheckEntityCollision(map)) {
+    bounds.y = original_bounds.y;
+  }
+
+  // NOTE: Collision Checks
   CheckMapBounds(
-      {0, 0, (float)map.MapWidth * Window::TILE_SIZE, (float)map.MapHeight * Window::TILE_SIZE});
+      {0, 0, (float)map->MapWidth * Window::TILE_SIZE, (float)map->MapHeight * Window::TILE_SIZE});
 }
 
 void Player::CheckMapBounds(Rectangle MapBounds) {
@@ -90,6 +97,25 @@ void Player::CheckMapBounds(Rectangle MapBounds) {
   } else if (bounds.y + bounds.height >= MapBounds.height) {
     bounds.y = MapBounds.height - bounds.height;
   }
+}
+
+bool Player::CheckEntityCollision(Map* map) {
+  Rectangle TempBounds        = bounds;
+  Vector2 TopLeft             = {TempBounds.x, TempBounds.y};
+  Vector2 BottomLeft          = {TempBounds.x, TempBounds.y + TempBounds.height};
+  Vector2 TopRight            = {TempBounds.x + TempBounds.width, TempBounds.y};
+  Vector2 BottomRight         = {TempBounds.x + TempBounds.width, TempBounds.y + TempBounds.height};
+  std::vector<Vector2> points = {TopLeft, TopRight, BottomLeft, BottomRight};
+
+  for (const Vector2& point : points) {
+    auto [Tile, TileBounds] = map->GetTile(point);
+    int flag                = Tile.GetTerrainFlag();
+    if (flag != map->LAND && flag != map->AIR && CheckCollisionPointRec(point, TileBounds)) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 void Player::AddGold(int Gold_Amount) { m_Gold += Gold_Amount; }

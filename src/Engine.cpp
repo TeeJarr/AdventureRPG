@@ -1,17 +1,22 @@
 #include "Engine.hpp"
 #include "Collectable.hpp"
 #include "Config.hpp"
+#include "Mob.hpp"
 #include "raylib.h"
 #include <string>
 
 Engine::Engine() {
   InitWindow(Window::SCREEN_SIZE.x, Window::SCREEN_SIZE.y, "Game");
-  SetTargetFPS(144);
+  // SetTargetFPS(144);
   InitCamera();
   map.LoadMap();
+  // HACK: Need to make function for popuationg the world with entities
   Collectable* coin = new Collectable(
       {(float)GetRandomValue(0, map.MapWidth), (float)GetRandomValue(0, map.MapHeight)});
   coin_arr.push_back(coin);
+  Mob* zombie = new Mob(0, {(float)GetRandomValue(0, map.MapWidth * Window::TILE_SIZE),
+                            (float)GetRandomValue(0, map.MapHeight * Window::TILE_SIZE)});
+  mob_arr.push_back(zombie);
   player.Spawn(map);
   while (!WindowShouldClose()) {
     Update();
@@ -35,11 +40,14 @@ void Engine::CameraActors() {
   BeginMode2D(camera);
   // TODO: Draw the map to the screen
   map.DrawMap();
+  // TODO: Draw other Entities to the screen
   for (Collectable* coin : coin_arr) {
     coin->Draw();
   }
+  for (Mob* mob : mob_arr) {
+    mob->Draw();
+  }
   player.Draw();
-  // TODO: Draw other Entities to the screen
   EndMode2D();
 }
 
@@ -54,9 +62,13 @@ void Engine::DrawUI() {
 }
 
 void Engine::Update() {
-  player.Update(map);
+  player.Update(&map);
   camera.target = {player.bounds.x + 20, player.bounds.y + 20};
   HandleCollectables();
+  // HACK: Move mob stuff into own function
+  for (Mob* mob : mob_arr) {
+    mob->Update(player);
+  }
 }
 
 void Engine::InitCamera() {

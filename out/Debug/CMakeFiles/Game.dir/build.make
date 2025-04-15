@@ -86,19 +86,19 @@ CMakeFiles/Game.dir/src/Engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Game.dir/src/Engine.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/teejarr/Code/games/AdventureRPG/src/Engine.cpp -o CMakeFiles/Game.dir/src/Engine.cpp.s
 
-CMakeFiles/Game.dir/src/Entity/Entity.cpp.o: CMakeFiles/Game.dir/flags.make
-CMakeFiles/Game.dir/src/Entity/Entity.cpp.o: /home/teejarr/Code/games/AdventureRPG/src/Entity/Entity.cpp
-CMakeFiles/Game.dir/src/Entity/Entity.cpp.o: CMakeFiles/Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/teejarr/Code/games/AdventureRPG/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Game.dir/src/Entity/Entity.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game.dir/src/Entity/Entity.cpp.o -MF CMakeFiles/Game.dir/src/Entity/Entity.cpp.o.d -o CMakeFiles/Game.dir/src/Entity/Entity.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Entity/Entity.cpp
+CMakeFiles/Game.dir/src/Entity/Mob.cpp.o: CMakeFiles/Game.dir/flags.make
+CMakeFiles/Game.dir/src/Entity/Mob.cpp.o: /home/teejarr/Code/games/AdventureRPG/src/Entity/Mob.cpp
+CMakeFiles/Game.dir/src/Entity/Mob.cpp.o: CMakeFiles/Game.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/teejarr/Code/games/AdventureRPG/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Game.dir/src/Entity/Mob.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game.dir/src/Entity/Mob.cpp.o -MF CMakeFiles/Game.dir/src/Entity/Mob.cpp.o.d -o CMakeFiles/Game.dir/src/Entity/Mob.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Entity/Mob.cpp
 
-CMakeFiles/Game.dir/src/Entity/Entity.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Game.dir/src/Entity/Entity.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/teejarr/Code/games/AdventureRPG/src/Entity/Entity.cpp > CMakeFiles/Game.dir/src/Entity/Entity.cpp.i
+CMakeFiles/Game.dir/src/Entity/Mob.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Game.dir/src/Entity/Mob.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/teejarr/Code/games/AdventureRPG/src/Entity/Mob.cpp > CMakeFiles/Game.dir/src/Entity/Mob.cpp.i
 
-CMakeFiles/Game.dir/src/Entity/Entity.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Game.dir/src/Entity/Entity.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/teejarr/Code/games/AdventureRPG/src/Entity/Entity.cpp -o CMakeFiles/Game.dir/src/Entity/Entity.cpp.s
+CMakeFiles/Game.dir/src/Entity/Mob.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Game.dir/src/Entity/Mob.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/teejarr/Code/games/AdventureRPG/src/Entity/Mob.cpp -o CMakeFiles/Game.dir/src/Entity/Mob.cpp.s
 
 CMakeFiles/Game.dir/src/Entity/Player.cpp.o: CMakeFiles/Game.dir/flags.make
 CMakeFiles/Game.dir/src/Entity/Player.cpp.o: /home/teejarr/Code/games/AdventureRPG/src/Entity/Player.cpp
@@ -128,40 +128,24 @@ CMakeFiles/Game.dir/src/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Game.dir/src/Main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/teejarr/Code/games/AdventureRPG/src/Main.cpp -o CMakeFiles/Game.dir/src/Main.cpp.s
 
-CMakeFiles/Game.dir/src/Map/Tile.cpp.o: CMakeFiles/Game.dir/flags.make
-CMakeFiles/Game.dir/src/Map/Tile.cpp.o: /home/teejarr/Code/games/AdventureRPG/src/Map/Tile.cpp
-CMakeFiles/Game.dir/src/Map/Tile.cpp.o: CMakeFiles/Game.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/teejarr/Code/games/AdventureRPG/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Game.dir/src/Map/Tile.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game.dir/src/Map/Tile.cpp.o -MF CMakeFiles/Game.dir/src/Map/Tile.cpp.o.d -o CMakeFiles/Game.dir/src/Map/Tile.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Map/Tile.cpp
-
-CMakeFiles/Game.dir/src/Map/Tile.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Game.dir/src/Map/Tile.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/teejarr/Code/games/AdventureRPG/src/Map/Tile.cpp > CMakeFiles/Game.dir/src/Map/Tile.cpp.i
-
-CMakeFiles/Game.dir/src/Map/Tile.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Game.dir/src/Map/Tile.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/teejarr/Code/games/AdventureRPG/src/Map/Tile.cpp -o CMakeFiles/Game.dir/src/Map/Tile.cpp.s
-
 # Object files for target Game
 Game_OBJECTS = \
 "CMakeFiles/Game.dir/src/Engine.cpp.o" \
-"CMakeFiles/Game.dir/src/Entity/Entity.cpp.o" \
+"CMakeFiles/Game.dir/src/Entity/Mob.cpp.o" \
 "CMakeFiles/Game.dir/src/Entity/Player.cpp.o" \
-"CMakeFiles/Game.dir/src/Main.cpp.o" \
-"CMakeFiles/Game.dir/src/Map/Tile.cpp.o"
+"CMakeFiles/Game.dir/src/Main.cpp.o"
 
 # External object files for target Game
 Game_EXTERNAL_OBJECTS =
 
 Game: CMakeFiles/Game.dir/src/Engine.cpp.o
-Game: CMakeFiles/Game.dir/src/Entity/Entity.cpp.o
+Game: CMakeFiles/Game.dir/src/Entity/Mob.cpp.o
 Game: CMakeFiles/Game.dir/src/Entity/Player.cpp.o
 Game: CMakeFiles/Game.dir/src/Main.cpp.o
-Game: CMakeFiles/Game.dir/src/Map/Tile.cpp.o
 Game: CMakeFiles/Game.dir/build.make
 Game: CMakeFiles/Game.dir/compiler_depend.ts
 Game: CMakeFiles/Game.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/teejarr/Code/games/AdventureRPG/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/teejarr/Code/games/AdventureRPG/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Game"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Game.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

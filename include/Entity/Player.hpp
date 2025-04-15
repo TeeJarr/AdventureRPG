@@ -5,19 +5,20 @@
 class Player {
   public:
   void Spawn(Map& map);
-  void Update(Map& map);
+  void Update(Map* map);
   void Draw() const;
-  void Move(Map& map);
+  void Move(Map* map);
   void Attack(); // NOTE: Does not buffer attacks so you must time attacks properly
   void TakeDamage(unsigned int a_DamageTaken);
   void Heal(unsigned int a_HealAmount);
   void AddGold(int Gold_Amount);
   unsigned int GetGold() const;
+  bool CheckEntityCollision(Map* map);
 
   public: // public member variable
   Rectangle bounds;
   Rectangle hit_box;
-  unsigned int PlayerDirection = UP;
+  int PlayerDirection = UP;
 
   private: // private functions
   void CheckMapBounds(Rectangle MapBounds);
@@ -29,7 +30,7 @@ class Player {
 
   private: // private member variables
   bool isAttacking     = false;
-  unsigned int m_speed = 150;
+  float m_speed        = 150;
   float AttackTimeSecs = 0.5;
-  enum Direction { UP = 10, DOWN = 20, LEFT = 30, RIGHT = 40 };
+  enum Direction { UP = -1, DOWN = 1, LEFT = -2, RIGHT = 2 };
 };

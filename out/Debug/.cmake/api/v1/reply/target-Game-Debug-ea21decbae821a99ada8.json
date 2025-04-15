@@ -92,8 +92,7 @@
 				0,
 				1,
 				2,
-				3,
-				4
+				3
 			]
 		}
 	],
@@ -134,8 +133,7 @@
 				0,
 				1,
 				2,
-				3,
-				4
+				3
 			]
 		}
 	],
@@ -150,7 +148,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/Entity/Entity.cpp",
+			"path" : "src/Entity/Mob.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -163,12 +161,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/Main.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/Map/Tile.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

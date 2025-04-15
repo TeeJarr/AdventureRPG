@@ -160,29 +160,29 @@ src/Engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Engine.cpp.s
 .PHONY : src/Engine.cpp.s
 
-src/Entity/Entity.o: src/Entity/Entity.cpp.o
-.PHONY : src/Entity/Entity.o
+src/Entity/Mob.o: src/Entity/Mob.cpp.o
+.PHONY : src/Entity/Mob.o
 
 # target to build an object file
-src/Entity/Entity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Entity.cpp.o
-.PHONY : src/Entity/Entity.cpp.o
+src/Entity/Mob.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Mob.cpp.o
+.PHONY : src/Entity/Mob.cpp.o
 
-src/Entity/Entity.i: src/Entity/Entity.cpp.i
-.PHONY : src/Entity/Entity.i
+src/Entity/Mob.i: src/Entity/Mob.cpp.i
+.PHONY : src/Entity/Mob.i
 
 # target to preprocess a source file
-src/Entity/Entity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Entity.cpp.i
-.PHONY : src/Entity/Entity.cpp.i
+src/Entity/Mob.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Mob.cpp.i
+.PHONY : src/Entity/Mob.cpp.i
 
-src/Entity/Entity.s: src/Entity/Entity.cpp.s
-.PHONY : src/Entity/Entity.s
+src/Entity/Mob.s: src/Entity/Mob.cpp.s
+.PHONY : src/Entity/Mob.s
 
 # target to generate assembly for a file
-src/Entity/Entity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Entity.cpp.s
-.PHONY : src/Entity/Entity.cpp.s
+src/Entity/Mob.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Entity/Mob.cpp.s
+.PHONY : src/Entity/Mob.cpp.s
 
 src/Entity/Player.o: src/Entity/Player.cpp.o
 .PHONY : src/Entity/Player.o
@@ -232,30 +232,6 @@ src/Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Main.cpp.s
 .PHONY : src/Main.cpp.s
 
-src/Map/Tile.o: src/Map/Tile.cpp.o
-.PHONY : src/Map/Tile.o
-
-# target to build an object file
-src/Map/Tile.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Map/Tile.cpp.o
-.PHONY : src/Map/Tile.cpp.o
-
-src/Map/Tile.i: src/Map/Tile.cpp.i
-.PHONY : src/Map/Tile.i
-
-# target to preprocess a source file
-src/Map/Tile.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Map/Tile.cpp.i
-.PHONY : src/Map/Tile.cpp.i
-
-src/Map/Tile.s: src/Map/Tile.cpp.s
-.PHONY : src/Map/Tile.s
-
-# target to generate assembly for a file
-src/Map/Tile.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Map/Tile.cpp.s
-.PHONY : src/Map/Tile.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -269,18 +245,15 @@ help:
 	@echo "... src/Engine.o"
 	@echo "... src/Engine.i"
 	@echo "... src/Engine.s"
-	@echo "... src/Entity/Entity.o"
-	@echo "... src/Entity/Entity.i"
-	@echo "... src/Entity/Entity.s"
+	@echo "... src/Entity/Mob.o"
+	@echo "... src/Entity/Mob.i"
+	@echo "... src/Entity/Mob.s"
 	@echo "... src/Entity/Player.o"
 	@echo "... src/Entity/Player.i"
 	@echo "... src/Entity/Player.s"
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"
-	@echo "... src/Map/Tile.o"
-	@echo "... src/Map/Tile.i"
-	@echo "... src/Map/Tile.s"
 .PHONY : help
 
 
