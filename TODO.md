@@ -1,11 +1,9 @@
 # WIP
 - [ ] create UI that has all of the player info
 - [ ] create items that can alter the players stats
-- [ ] create the other kinds of enemies that can spawn in the world
-- [ ] create dungeons that the player can enter to find loot
-- [ ] create a mob cap so that there arent too many mobs
 - [ ] create a passive mob that the player can kill for loot
 ## FUTURE
+- [ ] create dungeons that the player can enter to find loot
 - [ ] create tools that can give the player the ability
 to climb the mountains and swim through the water
 - [ ] populate the world with trees
@@ -18,6 +16,7 @@ the size of the world
 - [ ] Draw animated sprites to the screen
 - [ ] create an indoor map that has npcs and a shop
 ### BUGS
+- [ ] mobs be dying randomly
 #### COMPLETED
 - [x] create an outdoor map that has enemies
     - [x] still need to make enemies that populate the world and taking damage from the player
@@ -32,3 +31,7 @@ specific range
 - [x] add gold that drops
     - [x] make the gold drop from enemies
 - [x] fix the player movement keys being over ridden by other inputs
+- [x] create the other kinds of enemies that can spawn in the world
+- [x] create a mob cap so that there arent too many mobs
+- [x] create external structs that handle all of the functions
+of the game engine

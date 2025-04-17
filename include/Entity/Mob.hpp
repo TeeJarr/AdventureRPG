@@ -2,7 +2,7 @@
 #include "Map.hpp"
 #include "Player.hpp"
 #include "raylib.h"
-#include <vector>
+#include <array>
 
 class Mob {
   public:
@@ -17,6 +17,7 @@ class Mob {
   void GetCurrentHealth() const;
   void GetAttackDamage() const;
   bool Die();
+  void SpawnMob(unsigned int a_Mob_Flag, Vector2 a_SpawnLocation);
 
   public:
   Rectangle Bounds;
@@ -39,5 +40,3 @@ class Mob {
     SLIME_ATTACK_SPEED    = 80
   };
 };
-
-inline std::vector<Mob*> mob_arr;

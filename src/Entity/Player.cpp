@@ -132,6 +132,7 @@ void Player::Heal(unsigned int a_HealAmount) {
     m_CurHealth = GetMaxHealth();
   }
 }
+
 void Player::TakeDamage(unsigned int a_DamageAmount) {
   if (!m_isInvulnerable) {
     m_CurHealth -= a_DamageAmount;
@@ -171,6 +172,7 @@ void Player::RegenHealth() {
     }
   }
 }
+
 void Player::CheckInCombat() {
   if (m_inCombat) {
     m_CombatTimer -= GetFrameTime();

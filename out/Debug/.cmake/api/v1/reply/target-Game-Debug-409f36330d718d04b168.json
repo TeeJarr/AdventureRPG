@@ -75,7 +75,19 @@
 				},
 				{
 					"backtrace" : 4,
+					"path" : "/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable"
+				},
+				{
+					"backtrace" : 4,
 					"path" : "/home/teejarr/Code/games/AdventureRPG/include/Map"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/teejarr/Code/games/AdventureRPG/include/Audio"
 				}
 			],
 			"language" : "CXX",
@@ -92,7 +104,10 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4,
+				5,
+				6
 			]
 		}
 	],
@@ -103,10 +118,6 @@
 		[
 			{
 				"fragment" : "-g",
-				"role" : "flags"
-			},
-			{
-				"fragment" : "",
 				"role" : "flags"
 			},
 			{
@@ -133,7 +144,10 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4,
+				5,
+				6
 			]
 		}
 	],
@@ -142,7 +156,25 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/Audio/AudioHandler.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Camera/CameraHandler.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/Engine.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Entity/EntityHandler.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

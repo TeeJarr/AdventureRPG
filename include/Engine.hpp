@@ -1,4 +1,7 @@
 #pragma once
+#include "AudioHandler.hpp"
+#include "Camera/CameraHandler.hpp"
+#include "EntityHandler.hpp"
 #include "Map.hpp"
 #include "Player.hpp"
 #include <raylib.h>
@@ -6,27 +9,18 @@
 class Engine {
   public:
   Engine();
-  void Loop();
-  void CleanUp();
 
   private:
   void Update();
   void Draw();
-  void CameraActors();
+  void Init();
   void DrawUI();
-  void InitCamera();
-  void HandleCollectables();
-  void HandleMobs();
-  void MobSpawnCheck();
-  void LoadMusic();
+  void CleanUp();
 
-  private: // enviorment variables
-  float m_MobSpawnCheckRate     = 5;
-  unsigned int m_MobSpawnChance = 30;
-
-  private:
-  Camera2D camera;
-  Music music;
-  Player player;
-  Map map;
+  private: // Included Objects
+  CameraHandler m_Camera;
+  Player m_Player;
+  Map m_Map;
+  EntityHandler m_Entities;
+  AudioHandler m_Audio;
 };

@@ -53,5 +53,3 @@ class Collectable {
   unsigned int Value;
   Color color = GOLD;
 };
-
-inline std::vector<Collectable*> coin_arr;

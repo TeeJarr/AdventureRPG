@@ -31,5 +31,6 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 
 # Link libraries
 target_link_libraries(${PROJECT_NAME} raylib)
-target_include_directories(${PROJECT_NAME} PUBLIC include include/Entity include/Map)
+target_include_directories(${PROJECT_NAME} PUBLIC include include/Entity include/Entity/Mob 
+	include/Entity/Collectable include/Map include/Audio)
 

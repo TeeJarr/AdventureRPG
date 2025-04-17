@@ -1,7 +1,13 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Game.dir/link.d"
+  "CMakeFiles/Game.dir/src/Audio/AudioHandler.cpp.o"
+  "CMakeFiles/Game.dir/src/Audio/AudioHandler.cpp.o.d"
+  "CMakeFiles/Game.dir/src/Camera/CameraHandler.cpp.o"
+  "CMakeFiles/Game.dir/src/Camera/CameraHandler.cpp.o.d"
   "CMakeFiles/Game.dir/src/Engine.cpp.o"
   "CMakeFiles/Game.dir/src/Engine.cpp.o.d"
+  "CMakeFiles/Game.dir/src/Entity/EntityHandler.cpp.o"
+  "CMakeFiles/Game.dir/src/Entity/EntityHandler.cpp.o.d"
   "CMakeFiles/Game.dir/src/Entity/Mob.cpp.o"
   "CMakeFiles/Game.dir/src/Entity/Mob.cpp.o.d"
   "CMakeFiles/Game.dir/src/Entity/Player.cpp.o"
