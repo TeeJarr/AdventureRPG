@@ -16,9 +16,17 @@ class Engine {
   void DrawUI();
   void InitCamera();
   void HandleCollectables();
+  void HandleMobs();
+  void MobSpawnCheck();
+  void LoadMusic();
+
+  private: // enviorment variables
+  float m_MobSpawnCheckRate     = 5;
+  unsigned int m_MobSpawnChance = 30;
 
   private:
   Camera2D camera;
+  Music music;
   Player player;
   Map map;
 };

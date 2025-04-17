@@ -9,24 +9,28 @@ void Player::Spawn(Map& map) {
   bounds = {(float)map.MapWidth * Window::TILE_SIZE / 2.0f,
             (float)map.MapHeight * Window::TILE_SIZE / 2.0f, (float)Window::TILE_SIZE,
             (float)Window::TILE_SIZE};
-  m_speed *= Window::SCALE;
+  m_BaseSpeed *= Window::SCALE;
 }
 
-void Player::Draw() const {
-  DrawRectangleRec(bounds, RED);
-  isAttacking ? DrawRectangleRec(hit_box, WHITE) : DrawRectangleRec({}, BLACK);
+void Player::Draw() {
+  m_isInvulnerable ? DrawRectangleRec(bounds, BLACK) : DrawRectangleRec(bounds, RED);
+  m_inCombat ? DrawRectangleLinesEx(bounds, 3, WHITE) : void();
+  m_isAttacking ? DrawRectangleRec(hit_box, WHITE) : void();
 }
 
 void Player::Update(Map* map) {
   Move(map);
   Attack();
+  CheckInvulnerbility();
+  CheckInCombat();
+  RegenHealth();
 }
 
 void Player::Attack() {
-  if (IsKeyPressed(KEY_X) && !isAttacking) {
-    isAttacking = true;
+  if (IsKeyPressed(KEY_X) && !m_isAttacking) {
+    m_isAttacking = true;
   };
-  if (isAttacking) {
+  if (m_isAttacking) {
     if (PlayerDirection == LEFT) {
       hit_box = {bounds.x - (float)Window::TILE_SIZE, bounds.y, (float)Window::TILE_SIZE,
                  (float)Window::TILE_SIZE};
@@ -42,20 +46,27 @@ void Player::Attack() {
     }
     AttackTimeSecs -= 2 * GetFrameTime();
   }
-  if (isAttacking && AttackTimeSecs <= 0) {
-    isAttacking    = false;
+  if (m_isAttacking && AttackTimeSecs <= 0) {
+    m_isAttacking  = false;
     AttackTimeSecs = 0.5;
   }
 }
 
-void Player::Move(Map* map) {
-  float delta               = m_speed * GetFrameTime();
-  Rectangle original_bounds = bounds;
+unsigned int Player::DealDamage() const { return m_EquipedItemDamage; }
 
-  bool move_left  = (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT));
-  bool move_right = (IsKeyDown(KEY_RIGHT) && !IsKeyDown(KEY_LEFT));
-  bool move_up    = (IsKeyDown(KEY_UP) && !IsKeyDown(KEY_DOWN));
-  bool move_down  = (IsKeyDown(KEY_DOWN) && !IsKeyDown(KEY_UP));
+float Player::GetSpeed() const {
+  float speed = m_BaseSpeed;
+  // FIXME: incriment through equiped items for any increases
+  return speed;
+}
+
+void Player::Move(Map* map) {
+  float delta               = GetSpeed() * GetFrameTime();
+  Rectangle original_bounds = bounds;
+  bool move_left            = (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT));
+  bool move_right           = (IsKeyDown(KEY_RIGHT) && !IsKeyDown(KEY_LEFT));
+  bool move_up              = (IsKeyDown(KEY_UP) && !IsKeyDown(KEY_DOWN));
+  bool move_down            = (IsKeyDown(KEY_DOWN) && !IsKeyDown(KEY_UP));
 
   if (move_left) {
     bounds.x -= delta;
@@ -64,10 +75,7 @@ void Player::Move(Map* map) {
     bounds.x += delta;
     PlayerDirection = RIGHT;
   }
-
-  if (CheckEntityCollision(map)) {
-    bounds.x = original_bounds.x;
-  }
+  if (CheckEntityCollision(map)) bounds.x = original_bounds.x;
   if (move_up) {
     bounds.y -= delta;
     PlayerDirection = UP;
@@ -75,12 +83,7 @@ void Player::Move(Map* map) {
     bounds.y += delta;
     PlayerDirection = DOWN;
   }
-
-  if (CheckEntityCollision(map)) {
-    bounds.y = original_bounds.y;
-  }
-
-  // NOTE: Collision Checks
+  if (CheckEntityCollision(map)) bounds.y = original_bounds.y;
   CheckMapBounds(
       {0, 0, (float)map->MapWidth * Window::TILE_SIZE, (float)map->MapHeight * Window::TILE_SIZE});
 }
@@ -120,6 +123,88 @@ bool Player::CheckEntityCollision(Map* map) {
 
 void Player::AddGold(int Gold_Amount) { m_Gold += Gold_Amount; }
 unsigned int Player::GetGold() const { return m_Gold; }
+
+unsigned int Player::GetMaxHealth() const { return m_MaxBaseHealth; } // FIXME: add health bonuses
+unsigned int Player::GetCurrentHealth() const { return m_CurHealth; }
+void Player::Heal(unsigned int a_HealAmount) {
+  m_CurHealth += a_HealAmount;
+  if (m_CurHealth > GetMaxHealth()) {
+    m_CurHealth = GetMaxHealth();
+  }
+}
+void Player::TakeDamage(unsigned int a_DamageAmount) {
+  if (!m_isInvulnerable) {
+    m_CurHealth -= a_DamageAmount;
+    m_isInvulnerable = true;
+    m_inCombat       = true;
+  }
+  if (m_CurHealth <= 0) {
+    // impliment death
+    std::cout << "You are dead\n";
+    m_CurHealth = GetMaxHealth();
+  }
+}
+
+bool Player::CheckInvulnerbility() {
+  if (m_isInvulnerable) {
+    m_InvulnerableTimer -= GetFrameTime();
+    if (m_isInvulnerable && m_InvulnerableTimer <= 0) {
+      m_Color             = RED;
+      m_isInvulnerable    = false;
+      m_InvulnerableTimer = 0.5;
+    }
+  }
+  return m_isInvulnerable;
+}
+
+unsigned int Player::GetHealthRegenAmount() const {
+  unsigned int regen_amount = m_BaseHealthRegenAmount;
+  // FIXME: add regen amount buffs
+  return regen_amount;
+}
+void Player::RegenHealth() {
+  if (!m_inCombat) {
+    m_BaseHealthRegenSpeed -= GetFrameTime();
+    if (m_BaseHealthRegenSpeed <= 0) {
+      m_BaseHealthRegenSpeed = 1;
+      Heal(GetHealthRegenAmount());
+    }
+  }
+}
+void Player::CheckInCombat() {
+  if (m_inCombat) {
+    m_CombatTimer -= GetFrameTime();
+  }
+  if (m_CombatTimer <= 0) {
+    m_CombatTimer = 5;
+    m_inCombat    = false;
+  }
+}
+
+unsigned int Player::GetCurrentMana() const { return m_CurMana; }
+unsigned int Player::GetMaxMana() const { return m_BaseMaxMana; } // FIXME: impl mana buffs
+void Player::RegenMana() {
+  // FIXME: fix this function
+  AddMana((int)(GetManaRegenAmount() * GetFrameTime()));
+}
+unsigned int Player::GetManaRegenAmount() const {
+  unsigned int mana_regen = m_BaseManaRegenAmount;
+  // FIXME: impliment mana regen speed buffs
+  return mana_regen;
+}
+
+void Player::UseMana(unsigned int a_ManaAmount) {
+  m_CurMana -= a_ManaAmount;
+  if (m_CurMana < 0) {
+    m_CurMana = 0;
+  }
+}
+void Player::AddMana(unsigned int a_ManaAmount) {
+  m_CurMana += a_ManaAmount;
+  if (m_CurMana > GetMaxMana()) {
+    m_CurMana = GetMaxMana();
+  }
+}
 
 // DEBUG FUNCTIONS
 void Player::DebugPlayer() const {

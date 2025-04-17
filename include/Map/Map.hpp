@@ -8,7 +8,7 @@
 
 class Map {
   public:
-  void LoadMap(/* const char* filepath */) {
+  void LoadMap() {
     isMapLoaded = true;
     m_HeightMap = PopulateMap();
   }

@@ -1,4 +1,5 @@
 #pragma once
+#include "Map.hpp"
 #include "Player.hpp"
 #include "raylib.h"
 #include <vector>
@@ -10,17 +11,19 @@ class Mob {
   void Update(Player& player);
   void Draw();
   void Attack(Player& player);
-  void TakeDamage(unsigned int a_DamageAmount);
+  void TakeDamage(Player& player);
   void PathFinding(Player& player);
   void GetMaxHealth() const;
   void GetCurrentHealth() const;
   void GetAttackDamage() const;
+  bool Die();
 
   public:
   Rectangle Bounds;
 
   private: // mob type damage values
-  unsigned int m_Health;
+  int m_CurHealth;
+  unsigned int m_MaxHealth;
   unsigned int m_Damage;
   unsigned int m_Speed;
   unsigned int m_AttackSpeed;
