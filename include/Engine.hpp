@@ -4,6 +4,7 @@
 #include "EntityHandler.hpp"
 #include "Map.hpp"
 #include "Player.hpp"
+#include "UI/UI.hpp"
 #include <raylib.h>
 
 class Engine {
@@ -19,6 +20,7 @@ class Engine {
 
   private: // Included Objects
   CameraHandler m_Camera;
+  UI m_UI;
   Player m_Player;
   Map m_Map;
   EntityHandler m_Entities;

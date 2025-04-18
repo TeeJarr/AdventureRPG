@@ -26,11 +26,20 @@ include_directories(src)
 # Collect all source files automatically
 file(GLOB_RECURSE SOURCES src/*.cpp)
 
+option(BUILD_TESTS "Build unit tests" OFF)
+if(BUILD_TESTS)
+		message(STATUS "BUILD_TEST is ON")
+    file(GLOB_RECURSE TESTS test/*.cpp)
+    add_executable(test ${TESTS})
+    target_link_libraries(test raylib)
+    target_include_directories(test PUBLIC include include/raylib)
+endif()
+
 # Create executable
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 # Link libraries
-target_link_libraries(${PROJECT_NAME} raylib)
+target_link_libraries(${PROJECT_NAME} raylib )
 target_include_directories(${PROJECT_NAME} PUBLIC include include/Entity include/Entity/Mob 
-	include/Entity/Collectable include/Map include/Audio)
+	include/Entity/Collectable include/Map include/Audio include/raylib)
 

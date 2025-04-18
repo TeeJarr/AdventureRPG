@@ -14,6 +14,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/Game.dir/src/Entity/Player.cpp.o.d"
   "CMakeFiles/Game.dir/src/Main.cpp.o"
   "CMakeFiles/Game.dir/src/Main.cpp.o.d"
+  "CMakeFiles/Game.dir/src/UI/HUD.cpp.o"
+  "CMakeFiles/Game.dir/src/UI/HUD.cpp.o.d"
+  "CMakeFiles/Game.dir/src/UI/UI.cpp.o"
+  "CMakeFiles/Game.dir/src/UI/UI.cpp.o.d"
   "Game"
   "Game.pdb"
 )

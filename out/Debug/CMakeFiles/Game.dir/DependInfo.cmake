@@ -15,6 +15,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/teejarr/Code/games/AdventureRPG/src/Entity/Mob.cpp" "CMakeFiles/Game.dir/src/Entity/Mob.cpp.o" "gcc" "CMakeFiles/Game.dir/src/Entity/Mob.cpp.o.d"
   "/home/teejarr/Code/games/AdventureRPG/src/Entity/Player.cpp" "CMakeFiles/Game.dir/src/Entity/Player.cpp.o" "gcc" "CMakeFiles/Game.dir/src/Entity/Player.cpp.o.d"
   "/home/teejarr/Code/games/AdventureRPG/src/Main.cpp" "CMakeFiles/Game.dir/src/Main.cpp.o" "gcc" "CMakeFiles/Game.dir/src/Main.cpp.o.d"
+  "/home/teejarr/Code/games/AdventureRPG/src/UI/HUD.cpp" "CMakeFiles/Game.dir/src/UI/HUD.cpp.o" "gcc" "CMakeFiles/Game.dir/src/UI/HUD.cpp.o.d"
+  "/home/teejarr/Code/games/AdventureRPG/src/UI/UI.cpp" "CMakeFiles/Game.dir/src/UI/UI.cpp.o" "gcc" "CMakeFiles/Game.dir/src/UI/UI.cpp.o.d"
   "" "Game" "gcc" "CMakeFiles/Game.dir/link.d"
   )
 

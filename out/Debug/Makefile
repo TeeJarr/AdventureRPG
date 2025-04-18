@@ -304,6 +304,54 @@ src/Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/Main.cpp.s
 .PHONY : src/Main.cpp.s
 
+src/UI/HUD.o: src/UI/HUD.cpp.o
+.PHONY : src/UI/HUD.o
+
+# target to build an object file
+src/UI/HUD.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/UI/HUD.cpp.o
+.PHONY : src/UI/HUD.cpp.o
+
+src/UI/HUD.i: src/UI/HUD.cpp.i
+.PHONY : src/UI/HUD.i
+
+# target to preprocess a source file
+src/UI/HUD.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/UI/HUD.cpp.i
+.PHONY : src/UI/HUD.cpp.i
+
+src/UI/HUD.s: src/UI/HUD.cpp.s
+.PHONY : src/UI/HUD.s
+
+# target to generate assembly for a file
+src/UI/HUD.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/UI/HUD.cpp.s
+.PHONY : src/UI/HUD.cpp.s
+
+src/UI/UI.o: src/UI/UI.cpp.o
+.PHONY : src/UI/UI.o
+
+# target to build an object file
+src/UI/UI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/UI/UI.cpp.o
+.PHONY : src/UI/UI.cpp.o
+
+src/UI/UI.i: src/UI/UI.cpp.i
+.PHONY : src/UI/UI.i
+
+# target to preprocess a source file
+src/UI/UI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/UI/UI.cpp.i
+.PHONY : src/UI/UI.cpp.i
+
+src/UI/UI.s: src/UI/UI.cpp.s
+.PHONY : src/UI/UI.s
+
+# target to generate assembly for a file
+src/UI/UI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/src/UI/UI.cpp.s
+.PHONY : src/UI/UI.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -335,6 +383,12 @@ help:
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"
+	@echo "... src/UI/HUD.o"
+	@echo "... src/UI/HUD.i"
+	@echo "... src/UI/HUD.s"
+	@echo "... src/UI/UI.o"
+	@echo "... src/UI/UI.i"
+	@echo "... src/UI/UI.s"
 .PHONY : help
 
 

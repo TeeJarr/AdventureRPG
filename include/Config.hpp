@@ -3,7 +3,7 @@
 #include <sys/types.h>
 
 namespace Debug {
-  inline bool DEBUG_PERFORMANCE = true;
+  inline bool DEBUG_PERFORMANCE = false;
   inline bool DEBUG_PLAYER      = false;
 } // namespace Debug
 namespace Window {

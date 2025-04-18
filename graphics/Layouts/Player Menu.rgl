@@ -1,0 +1,41 @@
+#
+# rgl layout text file (v4.0) - raygui layout file generated using rGuiLayout
+#
+# Number of controls:     30
+#
+# Ref. window:    r <x> <y> <width> <height>
+# Anchor info:    a <id> <name> <posx> <posy> <enabled>
+# Control info:   c <id> <type> <name> <rectangle> <anchor_id> <text>
+#
+r 0 40 -1 -1
+a 001 anchor01 288 408 1
+c 000 3 Panel000 24 24 72 72 1 
+c 001 3 Panel001 120 120 72 72 1 
+c 002 3 Panel002 120 216 72 72 1 
+c 003 3 Panel003 120 24 72 72 1 
+c 004 3 Panel004 24 120 72 72 1 
+c 005 3 Panel005 24 312 72 72 1 
+c 006 3 Panel006 24 216 72 72 1 
+c 007 3 Panel007 120 312 72 72 1 
+c 008 18 Exp Bar 216 368 216 16 1 
+c 009 6 LabelButton009 216 344 24 24 1 Lv.
+c 010 6 LabelButton010 240 344 216 24 1 SAMPLE TEXT
+c 011 1 GroupBox011 0 0 456 408 1 Inventory
+c 012 1 GroupBox012 216 24 216 192 1 Stats
+c 013 6 LabelButton013 240 48 96 24 1 SAMPLE TEXT
+c 014 6 LabelButton014 240 72 120 24 1 SAMPLE TEXT
+c 015 6 LabelButton015 240 96 120 24 1 SAMPLE TEXT
+c 016 6 LabelButton016 240 120 120 24 1 SAMPLE TEXT
+c 017 6 LabelButton017 336 48 120 24 1 SAMPLE TEXT
+c 018 6 LabelButton018 336 72 120 24 1 SAMPLE TEXT
+c 019 6 LabelButton019 336 96 120 24 1 SAMPLE TEXT
+c 020 6 LabelButton020 336 120 120 24 1 SAMPLE TEXT
+c 021 6 LabelButton021 240 144 120 24 1 SAMPLE TEXT
+c 022 6 LabelButton022 336 144 120 24 1 SAMPLE TEXT
+c 023 6 LabelButton023 240 168 120 24 1 SAMPLE TEXT
+c 024 6 LabelButton024 336 168 120 24 1 SAMPLE TEXT
+c 025 2 Line025 216 232 216 16 1 
+c 026 1 GroupBox026 216 248 216 88 1 Tools
+c 027 3 Panel027 240 256 72 72 1 
+c 028 3 Panel028 336 256 72 72 1 
+c 029 6 LabelButton029 216 368 112 16 1 100/200
