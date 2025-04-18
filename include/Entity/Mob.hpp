@@ -1,13 +1,10 @@
 #pragma once
-#include "Map.hpp"
 #include "Player.hpp"
 #include "raylib.h"
-#include <array>
 
 class Mob {
   public:
-  Mob(unsigned int a_Mob_Flag, Vector2 a_SpawnLocation);
-  // ~Mob();
+  Mob(u_int8_t a_Mob_Flag, Vector2 a_SpawnLocation);
   void Update(Player& player);
   void Draw();
   void Attack(Player& player);
@@ -17,17 +14,17 @@ class Mob {
   void GetCurrentHealth() const;
   void GetAttackDamage() const;
   bool Die();
-  void SpawnMob(unsigned int a_Mob_Flag, Vector2 a_SpawnLocation);
+  void SpawnMob(u_int8_t a_Mob_Flag, Vector2 a_SpawnLocation);
 
   public:
   Rectangle Bounds;
 
   private: // mob type damage values
   int m_CurHealth;
-  unsigned int m_MaxHealth;
-  unsigned int m_Damage;
-  unsigned int m_Speed;
-  unsigned int m_AttackSpeed;
+  u_int16_t m_MaxHealth;
+  u_int16_t m_Damage;
+  u_int16_t m_Speed;
+  u_int16_t m_AttackSpeed;
   Color color;
 
   enum MobType { ZOMBIE, SKELETON, SLIME };

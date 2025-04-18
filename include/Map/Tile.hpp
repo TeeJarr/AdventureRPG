@@ -19,5 +19,5 @@ class Tile {
   Texture2D texture; // TODO: impliment the actual texture here
   Color TileColor;
   Rectangle Bounds;
-  unsigned int TerrainFlag;
+  u_int8_t TerrainFlag;
 };

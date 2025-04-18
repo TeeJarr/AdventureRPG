@@ -1,5 +1,4 @@
 # WIP
-- [ ] create UI that has all of the player info
 - [ ] create items that can alter the players stats
 - [ ] create a passive mob that the player can kill for loot
 ## FUTURE
@@ -17,7 +16,10 @@ the size of the world
 - [ ] create an indoor map that has npcs and a shop
 ### BUGS
 - [ ] mobs be dying randomly
+- [ ] player health randomly shot up super high when dying
 #### COMPLETED
+- [ ] optimized with int types to save memory
+- [x] create UI that has all of the player info
 - [x] create an outdoor map that has enemies
     - [x] still need to make enemies that populate the world and taking damage from the player
 - [x] Draw a controllable player to the screen

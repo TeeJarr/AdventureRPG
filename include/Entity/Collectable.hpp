@@ -50,6 +50,6 @@ class Collectable {
   Rectangle bounds;
 
   private:
-  unsigned int Value;
+  u_int8_t Value;
   Color color = GOLD;
 };

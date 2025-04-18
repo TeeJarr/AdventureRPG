@@ -1,7 +1,8 @@
 #pragma once
 #include <raylib.h>
 
-struct AudioHandler {
+class AudioHandler {
+  public:
   void Init();
   void UpdateSong();
   void LoadNewSong(const char* a_MusicPath);

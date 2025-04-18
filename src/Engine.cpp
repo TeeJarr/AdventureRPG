@@ -23,7 +23,7 @@ void Engine::Draw() {
 
 void Engine::Update() {
   m_Audio.PlayMusic();
-  m_Player.Update(&m_Map);
+  m_Player.Update(m_Map);
   m_Camera.Update(m_Player);
   m_Entities.Updates(m_Map, m_Player);
 }

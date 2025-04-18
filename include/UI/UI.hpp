@@ -4,7 +4,8 @@
 #include "raylib.h"
 #include <raygui.h>
 
-struct UI {
+class UI {
+  public:
   // functions
   void DrawUI(Player& player) const;
 

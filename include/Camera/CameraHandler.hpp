@@ -3,7 +3,8 @@
 #include "Player.hpp"
 #include "raylib.h"
 
-struct CameraHandler {
+class CameraHandler {
+  public:
   void Init(Player& player);
   void Update(Player& player);
   void DrawCameraObjects(Player& player, EntityHandler& entities, Map& map);

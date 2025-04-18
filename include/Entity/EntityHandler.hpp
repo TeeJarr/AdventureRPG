@@ -3,7 +3,8 @@
 #include "Mob.hpp"
 #include <vector>
 
-struct EntityHandler {
+class EntityHandler {
+  public:
   std::vector<Mob*> Mobs;
   std::vector<Collectable*> Collectables;
 
@@ -15,7 +16,7 @@ struct EntityHandler {
   void Draw() const;
 
   // Mob Values Checks
-  float m_MobSpawnCheckRate     = 5;
-  unsigned int m_MobSpawnChance = 30;
-  unsigned int m_MobCap;
+  float m_MobSpawnCheckRate = 5;
+  u_int8_t m_MobSpawnChance = 30;
+  u_int8_t m_MobCap;
 };

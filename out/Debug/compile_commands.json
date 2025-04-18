@@ -1,55 +1,55 @@
 [
 {
   "directory": "/home/teejarr/Code/games/AdventureRPG/out/Debug",
-  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Audio/AudioHandler.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Audio/AudioHandler.cpp",
+  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -I/home/teejarr/Code/games/AdventureRPG/include/Items -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Audio/AudioHandler.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Audio/AudioHandler.cpp",
   "file": "/home/teejarr/Code/games/AdventureRPG/src/Audio/AudioHandler.cpp",
   "output": "CMakeFiles/Game.dir/src/Audio/AudioHandler.cpp.o"
 },
 {
   "directory": "/home/teejarr/Code/games/AdventureRPG/out/Debug",
-  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Camera/CameraHandler.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Camera/CameraHandler.cpp",
+  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -I/home/teejarr/Code/games/AdventureRPG/include/Items -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Camera/CameraHandler.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Camera/CameraHandler.cpp",
   "file": "/home/teejarr/Code/games/AdventureRPG/src/Camera/CameraHandler.cpp",
   "output": "CMakeFiles/Game.dir/src/Camera/CameraHandler.cpp.o"
 },
 {
   "directory": "/home/teejarr/Code/games/AdventureRPG/out/Debug",
-  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Engine.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Engine.cpp",
+  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -I/home/teejarr/Code/games/AdventureRPG/include/Items -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Engine.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Engine.cpp",
   "file": "/home/teejarr/Code/games/AdventureRPG/src/Engine.cpp",
   "output": "CMakeFiles/Game.dir/src/Engine.cpp.o"
 },
 {
   "directory": "/home/teejarr/Code/games/AdventureRPG/out/Debug",
-  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Entity/EntityHandler.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Entity/EntityHandler.cpp",
+  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -I/home/teejarr/Code/games/AdventureRPG/include/Items -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Entity/EntityHandler.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Entity/EntityHandler.cpp",
   "file": "/home/teejarr/Code/games/AdventureRPG/src/Entity/EntityHandler.cpp",
   "output": "CMakeFiles/Game.dir/src/Entity/EntityHandler.cpp.o"
 },
 {
   "directory": "/home/teejarr/Code/games/AdventureRPG/out/Debug",
-  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Entity/Mob.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Entity/Mob.cpp",
+  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -I/home/teejarr/Code/games/AdventureRPG/include/Items -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Entity/Mob.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Entity/Mob.cpp",
   "file": "/home/teejarr/Code/games/AdventureRPG/src/Entity/Mob.cpp",
   "output": "CMakeFiles/Game.dir/src/Entity/Mob.cpp.o"
 },
 {
   "directory": "/home/teejarr/Code/games/AdventureRPG/out/Debug",
-  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Entity/Player.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Entity/Player.cpp",
+  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -I/home/teejarr/Code/games/AdventureRPG/include/Items -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Entity/Player.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Entity/Player.cpp",
   "file": "/home/teejarr/Code/games/AdventureRPG/src/Entity/Player.cpp",
   "output": "CMakeFiles/Game.dir/src/Entity/Player.cpp.o"
 },
 {
   "directory": "/home/teejarr/Code/games/AdventureRPG/out/Debug",
-  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Main.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Main.cpp",
+  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -I/home/teejarr/Code/games/AdventureRPG/include/Items -g -std=gnu++20 -o CMakeFiles/Game.dir/src/Main.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/Main.cpp",
   "file": "/home/teejarr/Code/games/AdventureRPG/src/Main.cpp",
   "output": "CMakeFiles/Game.dir/src/Main.cpp.o"
 },
 {
   "directory": "/home/teejarr/Code/games/AdventureRPG/out/Debug",
-  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -g -std=gnu++20 -o CMakeFiles/Game.dir/src/UI/HUD.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/UI/HUD.cpp",
+  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -I/home/teejarr/Code/games/AdventureRPG/include/Items -g -std=gnu++20 -o CMakeFiles/Game.dir/src/UI/HUD.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/UI/HUD.cpp",
   "file": "/home/teejarr/Code/games/AdventureRPG/src/UI/HUD.cpp",
   "output": "CMakeFiles/Game.dir/src/UI/HUD.cpp.o"
 },
 {
   "directory": "/home/teejarr/Code/games/AdventureRPG/out/Debug",
-  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -g -std=gnu++20 -o CMakeFiles/Game.dir/src/UI/UI.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/UI/UI.cpp",
+  "command": "/usr/bin/c++  -I/home/teejarr/Code/games/AdventureRPG/src -I/home/teejarr/Code/games/AdventureRPG/include -I/home/teejarr/Code/games/AdventureRPG/include/Entity -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Mob -I/home/teejarr/Code/games/AdventureRPG/include/Entity/Collectable -I/home/teejarr/Code/games/AdventureRPG/include/Map -I/home/teejarr/Code/games/AdventureRPG/include/Audio -I/home/teejarr/Code/games/AdventureRPG/include/raylib -I/home/teejarr/Code/games/AdventureRPG/include/Items -g -std=gnu++20 -o CMakeFiles/Game.dir/src/UI/UI.cpp.o -c /home/teejarr/Code/games/AdventureRPG/src/UI/UI.cpp",
   "file": "/home/teejarr/Code/games/AdventureRPG/src/UI/UI.cpp",
   "output": "CMakeFiles/Game.dir/src/UI/UI.cpp.o"
 }

@@ -1,13 +1,9 @@
 #include "Mob.hpp"
-#include "Collectable.hpp"
 #include "Config.hpp"
 #include "raylib.h"
 #include <cmath>
-#include <cstdlib>
 
-Mob::Mob(unsigned int a_Mob_Flag, Vector2 a_SpawnLocation) {
-  SpawnMob(a_Mob_Flag, a_SpawnLocation);
-}
+Mob::Mob(u_int8_t a_Mob_Flag, Vector2 a_SpawnLocation) { SpawnMob(a_Mob_Flag, a_SpawnLocation); }
 
 void Mob::Update(Player& player) {
   PathFinding(player);
@@ -17,10 +13,7 @@ void Mob::Update(Player& player) {
 }
 
 void Mob::Attack(Player& player) { player.TakeDamage(m_Damage); }
-void Mob::TakeDamage(Player& player) {
-  m_CurHealth -= player.DealDamage(); // FIXME: make it have a cooldown
-}
-
+void Mob::TakeDamage(Player& player) { m_CurHealth -= player.DealDamage(); }
 bool Mob::Die() { return m_CurHealth <= 0; }
 
 void Mob::PathFinding(Player& player) {
@@ -40,7 +33,7 @@ void Mob::PathFinding(Player& player) {
   }
 }
 
-void Mob::SpawnMob(unsigned int a_Mob_Flag, Vector2 a_SpawnLocation) {
+void Mob::SpawnMob(u_int8_t a_Mob_Flag, Vector2 a_SpawnLocation) {
   switch (a_Mob_Flag) {
     case ZOMBIE:
       m_AttackSpeed = ZOMBIE_ATTACK_SPEED / 100;
@@ -67,7 +60,6 @@ void Mob::SpawnMob(unsigned int a_Mob_Flag, Vector2 a_SpawnLocation) {
       color         = LIGHTGRAY;
       break;
   }
-
   Bounds = {a_SpawnLocation.x, a_SpawnLocation.y, (float)Window::TILE_SIZE,
             (float)Window::TILE_SIZE};
 }

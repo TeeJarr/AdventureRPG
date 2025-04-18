@@ -2,7 +2,6 @@
 #include "Config.hpp"
 #include "Map.hpp"
 #include "raylib.h"
-#include <cstdlib>
 #include <iostream>
 
 void Player::Spawn(Map& map) {
@@ -18,7 +17,7 @@ void Player::Draw() {
   m_isAttacking ? DrawRectangleRec(hit_box, WHITE) : void();
 }
 
-void Player::Update(Map* map) {
+void Player::Update(Map& map) {
   Move(map);
   Attack();
   CheckInvulnerbility();
@@ -52,7 +51,7 @@ void Player::Attack() {
   }
 }
 
-unsigned int Player::DealDamage() const { return m_EquipedItemDamage; }
+u_int16_t Player::DealDamage() const { return m_EquipedItemDamage; }
 
 float Player::GetSpeed() const {
   float speed = m_BaseSpeed;
@@ -60,7 +59,7 @@ float Player::GetSpeed() const {
   return speed;
 }
 
-void Player::Move(Map* map) {
+void Player::Move(Map& map) {
   float delta               = GetSpeed() * GetFrameTime();
   Rectangle original_bounds = bounds;
   bool move_left            = (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT));
@@ -85,7 +84,7 @@ void Player::Move(Map* map) {
   }
   if (CheckEntityCollision(map)) bounds.y = original_bounds.y;
   CheckMapBounds(
-      {0, 0, (float)map->MapWidth * Window::TILE_SIZE, (float)map->MapHeight * Window::TILE_SIZE});
+      {0, 0, (float)map.MapWidth * Window::TILE_SIZE, (float)map.MapHeight * Window::TILE_SIZE});
 }
 
 void Player::CheckMapBounds(Rectangle MapBounds) {
@@ -102,7 +101,7 @@ void Player::CheckMapBounds(Rectangle MapBounds) {
   }
 }
 
-bool Player::CheckEntityCollision(Map* map) {
+bool Player::CheckEntityCollision(Map& map) {
   Rectangle TempBounds        = bounds;
   Vector2 TopLeft             = {TempBounds.x, TempBounds.y};
   Vector2 BottomLeft          = {TempBounds.x, TempBounds.y + TempBounds.height};
@@ -111,9 +110,9 @@ bool Player::CheckEntityCollision(Map* map) {
   std::vector<Vector2> points = {TopLeft, TopRight, BottomLeft, BottomRight};
 
   for (const Vector2& point : points) {
-    auto [Tile, TileBounds] = map->GetTile(point);
+    auto [Tile, TileBounds] = map.GetTile(point);
     int flag                = Tile.GetTerrainFlag();
-    if (flag != map->LAND && flag != map->AIR && CheckCollisionPointRec(point, TileBounds)) {
+    if (flag != map.LAND && flag != map.AIR && CheckCollisionPointRec(point, TileBounds)) {
       return true;
     }
   }
@@ -121,19 +120,19 @@ bool Player::CheckEntityCollision(Map* map) {
   return false;
 }
 
-void Player::AddGold(int Gold_Amount) { m_Gold += Gold_Amount; }
-unsigned int Player::GetGold() const { return m_Gold; }
+void Player::AddGold(u_int16_t Gold_Amount) { m_Gold += Gold_Amount; }
+u_int16_t Player::GetGold() const { return m_Gold; }
 
-unsigned int Player::GetMaxHealth() const { return m_MaxBaseHealth; } // FIXME: add health bonuses
-unsigned int Player::GetCurrentHealth() const { return m_CurHealth; }
-void Player::Heal(unsigned int a_HealAmount) {
+u_int16_t Player::GetMaxHealth() const { return m_MaxBaseHealth; } // FIXME: add health bonuses
+u_int16_t Player::GetCurrentHealth() const { return m_CurHealth; }
+void Player::Heal(u_int16_t a_HealAmount) {
   m_CurHealth += a_HealAmount;
   if (m_CurHealth > GetMaxHealth()) {
     m_CurHealth = GetMaxHealth();
   }
 }
 
-void Player::TakeDamage(unsigned int a_DamageAmount) {
+void Player::TakeDamage(u_int16_t a_DamageAmount) {
   if (!m_isInvulnerable) {
     m_CurHealth -= a_DamageAmount;
     m_isInvulnerable = true;
@@ -158,11 +157,12 @@ bool Player::CheckInvulnerbility() {
   return m_isInvulnerable;
 }
 
-unsigned int Player::GetHealthRegenAmount() const {
+u_int8_t Player::GetHealthRegenAmount() const {
   unsigned int regen_amount = m_BaseHealthRegenAmount;
   // FIXME: add regen amount buffs
   return regen_amount;
 }
+
 void Player::RegenHealth() {
   if (!m_inCombat) {
     m_BaseHealthRegenSpeed -= GetFrameTime();
@@ -183,25 +183,25 @@ void Player::CheckInCombat() {
   }
 }
 
-unsigned int Player::GetCurrentMana() const { return m_CurMana; }
-unsigned int Player::GetMaxMana() const { return m_BaseMaxMana; } // FIXME: impl mana buffs
+u_int16_t Player::GetCurrentMana() const { return m_CurMana; }
+u_int16_t Player::GetMaxMana() const { return m_BaseMaxMana; } // FIXME: impl mana buffs
 void Player::RegenMana() {
   // FIXME: fix this function
   AddMana((int)(GetManaRegenAmount() * GetFrameTime()));
 }
-unsigned int Player::GetManaRegenAmount() const {
+u_int8_t Player::GetManaRegenAmount() const {
   unsigned int mana_regen = m_BaseManaRegenAmount;
   // FIXME: impliment mana regen speed buffs
   return mana_regen;
 }
 
-void Player::UseMana(unsigned int a_ManaAmount) {
+void Player::UseMana(u_int16_t a_ManaAmount) {
   m_CurMana -= a_ManaAmount;
   if (m_CurMana < 0) {
     m_CurMana = 0;
   }
 }
-void Player::AddMana(unsigned int a_ManaAmount) {
+void Player::AddMana(u_int16_t a_ManaAmount) {
   m_CurMana += a_ManaAmount;
   if (m_CurMana > GetMaxMana()) {
     m_CurMana = GetMaxMana();
